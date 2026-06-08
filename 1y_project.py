@@ -55,3 +55,6 @@ elif choice == "2":
     lvl2()
 
 #needs a "if see answers print answers, if not try again" type of thing, so she would decide if she wants or no
+
+
+# add "import os" to use as os.system("clear"), and comment more on the code.
