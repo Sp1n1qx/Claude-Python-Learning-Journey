@@ -11,7 +11,7 @@ t.sleep(0.3)
 
 def show():
     for x in range(5):
-        print("lvl",x + 1)
+        print("lvl", x + 1)
         t.sleep(0.3)
 
 def lvl1():
@@ -26,7 +26,7 @@ def lvl1():
             print("Try again.\n")
             print("To open the safe, enter 4 digit code.\n" \
             "hint: the month we met + the year we are * 16*14 / 30.")
-        
+
 def lvl2():
     print("You are in our house, and you forgot the code, what is the code?\n" \
     "hint: IWTMY\n" \
@@ -45,7 +45,6 @@ def lvl2():
                 print("You are in our house, and you forgot the code, what is the code?\n" \
                 "hint: IWTMY\n" \
                 "each Letter = one word")
-        
 
 show()
 
@@ -54,4 +53,5 @@ if choice == "1":
     lvl1()
 elif choice == "2":
     lvl2()
+
 #needs a "if see answers print answers, if not try again" type of thing, so she would decide if she wants or no
