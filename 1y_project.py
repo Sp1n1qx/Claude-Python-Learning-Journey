@@ -29,18 +29,22 @@ def lvl1():
         
 def lvl2():
     print("You are in our house, and you forgot the code, what is the code?\n" \
-    "hint: IWTMY\n")
+    "hint: IWTMY\n" \
+    "to get hints write .help.")
     while True:
         answer = input()
         if answer.upper() == "I WANT TO MARRY YOU":
             print("Good Girl.")
             return 1
-        elif answer == "2":
-            print("This is like the videos on tik tok you see someone putting letters as a meaning.")
-        elif answer == "3":
-            print("You are in our house, and you forgot the code, what is the code?\n" \
-            "hint: IWTMY\n" \
-            "each Letter = one word")
+        elif answer == "help":
+            answer = input("choose your hint, 1-3\n"
+            "write like hint 1/etc...")
+            if answer == "hint 1":
+                print("This is like the videos on tik tok you see someone putting letters as a meaning.")
+            elif answer == "hint 2":
+                print("You are in our house, and you forgot the code, what is the code?\n" \
+                "hint: IWTMY\n" \
+                "each Letter = one word")
         
 
 show()
