@@ -8,6 +8,13 @@ import os
 # score
 score = 0
 
+# main hints from each lvl to save lines, ill do one example first
+lvl3_main_hint = {
+    "hint": ("You need to find a math calculation to reach 08072025, how will you do?\nhint: you only need this numbers;\n2,3,5,7,271\n")
+}
+
+# do here to lvl 2 and 1 prob, but by order, so up
+
 # hints from lvl 2
 lvl2_hint = {
     "hint 1": ("This is like the videos on tik tok you see someone putting letters as a meaning."),
@@ -16,7 +23,7 @@ lvl2_hint = {
 
 # hints for lvl 3
 lvl3_hint = {
-    "hint 1": ("you can use those numbers to add, subract, divide and multiply\n but doesnt mean you need to use all of those."),
+    "hint 1": ("you can use those numbers to add, subract, divide and multiply\nbut doesnt mean you need to use all of those."),
     "hint 2": ("use only one of those 4 options")
 }
 
@@ -87,26 +94,27 @@ def lvl2():
 
 def lvl3():
     clear()
-    print("You need to find a math calculation to reach 08072025, how will you do?\n" \
-    "hint: you only need this numbers;\n" \
-    "2,3,5,7,271\n")
+    print(lvl3_main_hint["hint"])
     while True:
         answer = input("Answer: ")
-        if answer == "3*3 5*5 7*7 * 271":
+        if answer == "3*3 + 5*5 + 7*7 * 271" or answer == "3*3+5*5+7*7*271":
             print("Correct!")
         else:
             choice = input("Do you want a hint? ")
             if choice.lower() == "yes":
-                clear()
-                print("You need to find a math calculation to reach 08072025, how will you do?\n" \
-                "hint: you only need this numbers;\n" \
-                "2,3,5,7,271\n")
-                print(lvl3_hint["hint 1"])
+                choice = int(input("How many? (1-2)"))
+                if choice == 1:
+                    clear()
+                    print(lvl3_hint["hint 1"])
+                else:
+                    clear()
+                    print(lvl3_main_hint["hint"])
+                    print(f"hint 1: {lvl3_hint["hint 1"]}")
+                    print()
+                    print(f"hint 2: {lvl3_hint["hint 2"]}")
             elif choice.lower() == "no":
                 clear()
-                print("You need to find a math calculation to reach 08072025, how will you do?\n" \
-                "hint: you only need this numbers;\n" \
-                "2,3,5,7,271\n")
+                print(lvl3_main_hint["hint"])
 
 show()
 
