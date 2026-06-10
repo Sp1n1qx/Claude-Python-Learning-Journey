@@ -14,7 +14,11 @@ lvl2_hint = {
     "hint 2": ("each Letter = one word")
 }
 
-# maybe hints for lvl 3? idk yet
+# hints for lvl 3
+lvl3_hint = {
+    "hint 1": ("you can use those numbers to add, subract, divide and multiply\n but doesnt mean you need to use all of those."),
+    "hint 2": ("use only one of those 4 options")
+}
 
 # name of the game
 print("Escape and Think...")
@@ -97,8 +101,7 @@ def lvl3():
                 print("You need to find a math calculation to reach 08072025, how will you do?\n" \
                 "hint: you only need this numbers;\n" \
                 "2,3,5,7,271\n")
-                print("you can use those numbers to add, subract, divide and multiply\n" \
-                "but doesnt mean you need to use all of those.")
+                print(lvl3_hint["hint 1"])
             elif choice.lower() == "no":
                 clear()
                 print("You need to find a math calculation to reach 08072025, how will you do?\n" \
