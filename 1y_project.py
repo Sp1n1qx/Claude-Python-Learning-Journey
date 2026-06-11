@@ -8,12 +8,28 @@ import os
 # score
 score = 0
 
-# main hints from each lvl to save lines, ill do one example first
+# main hints from each lvl to save lines
+
+lvl1_main_hint = {
+    "hint": ("To open the safe, enter 4 digit first last code.\nhint: the month we met / the year we are * 16*14 * 30.")
+}
+
+lvl2_main_hint = {
+    "hint": ("You are in our house, and you forgot the code, what is the code?\nhint: IWTMY\nto get hints write .help.")
+}
+
 lvl3_main_hint = {
     "hint": ("You need to find a math calculation to reach 08072025, how will you do?\nhint: you only need this numbers;\n2,3,5,7,271\n")
 }
 
-# do here to lvl 2 and 1 prob, but by order, so up
+lvl4_main_hint = {
+    "hint": ("My Dear Love, i have a puzzle for you.\nFind the 5 digit code.\n"
+    "Digit 1 is a quarter of digit 5\n"
+    "Digit 2 is equal to digit 5\n"
+    "digit 3 is digit 2 - digit 1\n"
+    "digit 4 is half of digit 2\n"
+    "digit 5 = 4\n")
+}
 
 # hints from lvl 2
 lvl2_hint = {
@@ -45,8 +61,7 @@ def show():
 # lvl 1
 def lvl1():
     clear()
-    print("To open the safe, enter 4 digit first last code.\n" \
-    "hint: the month we met / the year we are * 16*14 * 30.")
+    print(lvl1_main_hint["hint"])
     # while doesnt get right, try to answer again
     while True:
         answer = input("Answer Here: ")
@@ -57,15 +72,12 @@ def lvl1():
             clear()
             # if not right show prompt to try again 
             print("Try again.\n")
-            print("To open the safe, enter 4 digit code.\n" \
-            "hint: the month we met + the year we are * 16*14 / 30.")
+            print(lvl1_main_hint["hint"])
 
 def lvl2():
     clear()
-    print("You are in our house, and you forgot the code, what is the code?\n" \
-    "hint: IWTMY\n" \
-    "to get hints write .help.")
     while True:
+        print(lvl2_main_hint["hint"])
         answer = input("Say Answer/Get Help here: ")
         if answer.upper() == "I WANT TO MARRY YOU":
             print("Good Girl.")
@@ -80,7 +92,7 @@ def lvl2():
             print()
             answer = input("Would you like to see the next hint? (yes/no) ")
             if answer.lower() == "no":
-                print()
+                pass
             else:
                 print(lvl2_hint["hint 2"])
                 print("Answer:")
@@ -90,7 +102,6 @@ def lvl2():
             print()
         else:
             clear()
-            print("Try again")
 
 def lvl3():
     clear()
@@ -116,6 +127,28 @@ def lvl3():
                 clear()
                 print(lvl3_main_hint["hint"])
 
+def lvl4():
+    clear()
+    print(lvl4_main_hint["hint"])
+    while True:
+        answer = input("Answer: ")
+        if answer == "14324":
+            clear()
+            print("Correct.")
+            print("Part 2\n")
+            print("Those numbers have meanings, try to find what it says.")
+            print("Number is 14324")
+            meaning = input("Answer: ")
+            if meaning.upper() == "I LOVE YOU FOREVER":
+                print("Good job Sweet Heart.\n" \
+                "Almost at the end.")
+        else:
+            hint = input("Want a hint? ")
+            if hint.lower() == "yes":
+                print("\nIf you say it out loud, it takes 5 syllables. If you write it down, the length of each word matches the code. What am I trying to tell you?")
+            elif hint.lower() == "no":
+                pass
+
 show()
 
 while True:
@@ -127,6 +160,8 @@ while True:
             lvl2()
         elif choice == 3:
             lvl3()
+        elif choice == 4:
+            lvl4()
     except ValueError:
         clear()
         print("Invalid Output!")
