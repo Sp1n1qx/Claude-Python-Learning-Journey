@@ -5,10 +5,9 @@ import time as t
 # cleaning spaces when too much has been writen
 import os
 
-# score
-score = 0
+# score to show points in the end
 
-# main hints from each lvl to save lines
+# main hints from each lvl
 
 lvl1_main_hint = {
     "hint": ("To open the safe, enter 4 digit first last code.\nhint: the month we met / the year we are * 16*14 * 30.")
@@ -31,16 +30,21 @@ lvl4_main_hint = {
     "digit 5 = 4\n")
 }
 
-# hints from lvl 2
+# hints from lvls
 lvl2_hint = {
     "hint 1": ("This is like the videos on tik tok you see someone putting letters as a meaning."),
     "hint 2": ("each Letter = one word")
 }
 
-# hints for lvl 3
 lvl3_hint = {
     "hint 1": ("you can use those numbers to add, subract, divide and multiply\nbut doesnt mean you need to use all of those."),
-    "hint 2": ("use only one of those 4 options")
+    "hint 2": ("use only one of those 4 options"),
+    "hint 3": ("for you to be able to find the answer i would sugest you to only use the multiply")
+}
+
+lvl4_hint = {
+    "hint 1": ("\nIf you say it out loud, it takes 5 syllables. If you write it down, the length of each word matches the code. What am I trying to tell you?"),
+    "hint 2": ("Its something you said i wasnt scared to say alot to you and in front of everyone")
 }
 
 # name of the game
@@ -116,7 +120,19 @@ def lvl3():
                 choice = int(input("How many? (1-2)"))
                 if choice == 1:
                     clear()
-                    print(lvl3_hint["hint 1"])
+                    print(f"hint 1: {lvl3_hint["hint 1"]}")
+                elif choice == 2:
+                    clear()
+                    print(f"hint 1: {lvl3_hint["hint 1"]}")
+                    print()
+                    print(f"hint 2: {lvl3_hint["hint 2"]}")
+                elif choice == 3:
+                    clear()
+                    print(f"hint 1: {lvl3_hint["hint 1"]}")
+                    print()
+                    print(f"hint 2: {lvl3_hint["hint 2"]}")
+                    print()
+                    print(f"hint 3: {lvl3_hint["hint 3"]}")
                 else:
                     clear()
                     print(lvl3_main_hint["hint"])
@@ -145,7 +161,11 @@ def lvl4():
         else:
             hint = input("Want a hint? ")
             if hint.lower() == "yes":
-                print("\nIf you say it out loud, it takes 5 syllables. If you write it down, the length of each word matches the code. What am I trying to tell you?")
+                amount = int(input("How many? "))
+                if amount == 1:
+                    print(lvl4_hint["hint 1"])
+                elif amount == 2:
+                    print(lvl4_hint["hint 2"])
             elif hint.lower() == "no":
                 pass
 
@@ -166,7 +186,3 @@ while True:
         clear()
         print("Invalid Output!")
         print("Try again.\n")
-
-# look discord for one inspiration
-
-# for you to be able to find the answer i would sugest you to only use the multiply
