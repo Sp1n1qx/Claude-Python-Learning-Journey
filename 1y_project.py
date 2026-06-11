@@ -65,18 +65,15 @@ def show():
 # lvl 1
 def lvl1():
     clear()
-    print(lvl1_main_hint["hint"])
     # while doesnt get right, try to answer again
     while True:
+        print(lvl1_main_hint["hint"])
         answer = input("Answer Here: ")
         if answer == "2398":
             print("Good job darling!")
             return 1
         else:
             clear()
-            # if not right show prompt to try again 
-            print("Try again.\n")
-            print(lvl1_main_hint["hint"])
 
 def lvl2():
     clear()
@@ -114,6 +111,7 @@ def lvl3():
         answer = input("Answer: ")
         if answer == "3*3 + 5*5 + 7*7 * 271" or answer == "3*3+5*5+7*7*271":
             print("Correct!")
+            return 1
         else:
             choice = input("Do you want a hint? ")
             if choice.lower() == "yes":
@@ -156,18 +154,24 @@ def lvl4():
             print("Number is 14324")
             meaning = input("Answer: ")
             if meaning.upper() == "I LOVE YOU FOREVER":
+                clear()
                 print("Good job Sweet Heart.\n" \
-                "Almost at the end.")
+                "Almost at the end of the levels.")
+                return 1
         else:
             hint = input("Want a hint? ")
             if hint.lower() == "yes":
-                amount = int(input("How many? "))
+                amount = int(input("How many? (1-2) "))
                 if amount == 1:
                     print(lvl4_hint["hint 1"])
                 elif amount == 2:
+                    print(lvl4_hint["hint 1"])
                     print(lvl4_hint["hint 2"])
             elif hint.lower() == "no":
                 pass
+
+def lvl5():
+    print("Hello")
 
 show()
 
@@ -182,7 +186,14 @@ while True:
             lvl3()
         elif choice == 4:
             lvl4()
+        elif choice == 5:
+            lvl5()
     except ValueError:
         clear()
-        print("Invalid Output!")
-        print("Try again.\n")
+        show()
+
+# do lvl 5
+# try to find smth else to add, if there is time, try and learn GUI to add
+
+# get points
+# when asking for hint say "getting hint loses 1 point, you start with 3 on each question"
