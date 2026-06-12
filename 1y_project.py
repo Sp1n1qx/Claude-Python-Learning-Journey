@@ -2,10 +2,9 @@
 
 # suspence time
 import time as t
+
 # cleaning spaces when too much has been writen
 import os
-
-# score to show points in the end
 
 # main hints from each lvl
 
@@ -18,7 +17,7 @@ lvl2_main_hint = {
 }
 
 lvl3_main_hint = {
-    "hint": ("You need to find a math calculation to reach 08072025, how will you do?\nhint: you only need this numbers;\n2,3,5,7,271\n")
+    "hint": ("You need to find a math calculation to reach 08072025, how will you do?\nhint: you only need this numbers;\n3,5,7,271\n")
 }
 
 lvl4_main_hint = {
@@ -84,30 +83,23 @@ def lvl2():
             print("Good Girl.")
             return 1
         elif answer == "help":
-            clear()
-            answer = input("choose your hint, 1-3\n"
-            "write like hint 1/etc... \n")
-        elif answer == "hint 1":
-            clear()
-            print(lvl2_hint["hint 1"])
-            print()
-            answer = input("Would you like to see the next hint? (yes/no) ")
-            if answer.lower() == "no":
-                pass
-            else:
-                print(lvl2_hint["hint 2"])
-                print("Answer:")
-        elif answer == "hint 2":
-            clear()
-            print(lvl2_hint["hint 2"])
-            print()
+            amount = input("how many hints? (1-2): ")
+            if amount == "1":
+                clear()
+                print(f"hint 1: {lvl2_hint["hint 1"]}")
+                print()
+            elif amount == "2":
+                clear()
+                print(f"hint 1: {lvl2_hint["hint 1"]}")
+                print(f"hint 2: {lvl2_hint["hint 2"]}")
+                print()
         else:
             clear()
 
 def lvl3():
     clear()
-    print(lvl3_main_hint["hint"])
     while True:
+        print(lvl3_main_hint["hint"])
         answer = input("Answer: ")
         if answer == "3*3 + 5*5 + 7*7 * 271" or answer == "3*3+5*5+7*7*271":
             print("Correct!")
@@ -115,7 +107,7 @@ def lvl3():
         else:
             choice = input("Do you want a hint? ")
             if choice.lower() == "yes":
-                choice = int(input("How many? (1-2)"))
+                choice = int(input("How many? (1-3)"))
                 if choice == 1:
                     clear()
                     print(f"hint 1: {lvl3_hint["hint 1"]}")
@@ -131,15 +123,10 @@ def lvl3():
                     print(f"hint 2: {lvl3_hint["hint 2"]}")
                     print()
                     print(f"hint 3: {lvl3_hint["hint 3"]}")
-                else:
-                    clear()
-                    print(lvl3_main_hint["hint"])
-                    print(f"hint 1: {lvl3_hint["hint 1"]}")
-                    print()
-                    print(f"hint 2: {lvl3_hint["hint 2"]}")
             elif choice.lower() == "no":
                 clear()
-                print(lvl3_main_hint["hint"])
+            else:
+                clear()
 
 def lvl4():
     clear()
@@ -195,5 +182,5 @@ while True:
 # do lvl 5
 # try to find smth else to add, if there is time, try and learn GUI to add
 
-# get points
+# score to show points in the end
 # when asking for hint say "getting hint loses 1 point, you start with 3 on each question"
